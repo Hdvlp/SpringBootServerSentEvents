@@ -13,7 +13,6 @@ public class WebController {
     @GetMapping("/")
     public String getShowSse(HttpServletResponse response) {
         response.addHeader("Content-type", "text/html;charset=utf8");
-        response.addHeader("Access-Control-Allow-Origin", "*");
         return new String("""
             <!doctype html>
             <html><head></head>

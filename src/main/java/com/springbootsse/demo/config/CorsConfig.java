@@ -7,12 +7,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
 
-    public static final String domain = "localhost";
+    private static final String[] domains = new String[]{
+        "http://localhost:8080",
+        "http://127.0.0.1:8080",
+        "http://[::1]:8080"
+    };
     
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/v1/sse/subscribe")
-                .allowedOrigins(domain) 
+                .allowedOrigins(domains) 
                 .allowedMethods("GET");
     }
 }

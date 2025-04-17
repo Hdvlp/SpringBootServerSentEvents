@@ -2,4 +2,7 @@ spring:
   application:
     name: demo
 
+server:
+  servlet:
+    context-path: /
 
